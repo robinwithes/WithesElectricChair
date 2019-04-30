@@ -22,8 +22,8 @@ class CfgAddons
 
 class CfgVehiclesClasses
 {
-class Withes_ElectricChair 
-{ 
+class Withes_ElectricChair
+{
 displayName="Electric Chair";
 };
 };
@@ -243,63 +243,33 @@ class CfgVehicles
 		displayName = "Electric Chair";
 
 		
-		// class AnimationSources
-		// {
-		// 	class Bed_Rotation
-		// 	{
-		// 		source = "user";
-		// 		initPhase = 0;
-		// 		animPeriod = 2;
-		// 	};
-		// 	class ROBERT_Rotation
-		// 	{
-		// 		source = "user";
-		// 		initPhase = 0;
-		// 		animPeriod = 2;
-		// 	};			
-		// };
+		class AnimationSources
+		{
+			class Crown_Translation
+			{
+				source = "user";
+				initPhase = 0;
+				animPeriod = 2;
+			};
+			class Chain_1_Translation
+			{
+				source = "user";
+				initPhase = 0;
+				animPeriod = 2;
+			};			
+		};
 		
-		// class UserActions
-		// {
-		// 	class open
-		// 	{
-		// 		displayName = "$STR_Wsunac";
-		// 		position = "button1";
-		// 		radius = 1.5;
-		// 		onlyForPlayer = 0;
-		// 		showWindow = 0;
-		// 		condition = ((this animationPhase 'Bed_Rotation') < 0.5) && ((this animationPhase 'ROBERT_Rotation') < 0.5) && (side player == independent && count crew this != 0 && !(player in crew this));                                  
-		// 		statement="this execVM ""\ct_scanner_by_coala\scripts\in.sqf""";
-		// 	};
-		// 	class Close
-		// 	{
-		// 		displayName = "$STR_Wysunac";
-		// 		position = "button1";
-		// 		radius = 1.5;
-		// 		onlyForPlayer = 0;
-		// 		showWindow = 0;
-		// 		condition = ((this animationPhase 'Bed_Rotation') >= 0.5) && ((this animationPhase 'ROBERT_Rotation') >= 0.5) && (side player == independent);                                
-		// 		statement="this execVM ""\ct_scanner_by_coala\scripts\out.sqf""";
-		// 	};			
-			
-		// 	class RestrainPatient
-		// 	{
-		// 		displayName = "$STR_Zwiazac";
-		// 		radius = 1.5;
-		// 		position = "button2";
-		// 		onlyForplayer = 1;
-		// 		condition = "locked this == 1 && side player == independent && count crew this != 0 && !(player in crew this);";
-		// 		statement = "[[[this, 'LOCK'], '\ct_scanner_by_coala\scripts\lock.sqf'], 'BIS_fnc_execVM', true] call BIS_fnc_MP;";
-		// 	};
-		// 	class UnRestrainPatient
-		// 	{
-		// 		displayName = "$STR_Rozwiazac";
-		// 		radius = 1.5;
-		// 		position = "button2";
-		// 		onlyForplayer = 1;
-		// 		condition = "locked this != 1 && side player == independent && count crew this != 0 && !(player in crew this);";
-		// 		statement = "[[[this, 'UNLOCK'], '\ct_scanner_by_coala\scripts\lock.sqf'], 'BIS_fnc_execVM', true] call BIS_fnc_MP;";
-		// 	};			
-		// };
+		class UserActions
+		{
+			class open
+			{
+				displayName = "use";
+				position = "get_in_pos";
+				radius = 8.5;
+				onlyForPlayer = 1;
+				condition = "true";                                  
+				statement="this animateSource ['Crown_Translation',1];";
+			};
+		};
 	};	
 };
