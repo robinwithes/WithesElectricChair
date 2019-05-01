@@ -241,17 +241,22 @@ class CfgVehicles
 			};			
 		};
 		
-		// class UserActions
-		// {
-		// 	class open
-		// 	{
-		// 		displayName = "Turn on chair";
-		// 		position = "action_point";
-		// 		radius = 4;
-		// 		onlyForPlayer = 1;
-		// 		condition = "";                                  
-		// 		statement="0 execVM 'scripts\enablechair.sqf'";
-		// 	};
-		// };
-	};	
+		class UserActions
+		{
+			class turn_on_chair_action
+			{
+				displayName = "Electrocute Detainee";
+				position = "get_in_pos";
+				radius = 10;
+				onlyForPlayer = 0;
+				condition = "!(this getVariable ['in_use',false]) && (count (crew this) > 0)";                                  
+				statement="this execVM '\Withes_ElectricChair\scripts\enablechair.sqf'";
+			};
+		};
+
+		class EventHandlers
+		{
+			init = "(_this select 0) execVM '\Withes_ElectricChair\scripts\setupEVH.sqf'";
+		};
+	};
 };
