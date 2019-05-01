@@ -28,13 +28,13 @@ class CfgVehiclesClasses
 	};
 };
 
-// class CfgSounds {
-//   class wolf2 {
-//     name = "";
-//     sound[] = {"ct_scanner_by_coala\sound\MRI.ogg", db+2, 1};
-//     titles[] = {};
-//   };
-// };
+class CfgSounds {
+  class electricChairScream {
+    name = "electricChairScream";
+    sound[] = {"Withes_ElectricChair\sounds\electricChairScream.ogg", db+2, 1};
+    titles[] = {};
+  };
+};
 
 class CfgMovesBasic 
 {
@@ -149,7 +149,7 @@ class CfgVehicles
 			mat[] = {};
 		};
 		mapSize = 2.55;
-		getInRadius = 8.5;
+		getInRadius = 10.5;
 		secondaryExplosion = -1;
 		fuelExplosionPower = 0;
 		fuelCapacity = 0;
@@ -241,17 +241,17 @@ class CfgVehicles
 			};			
 		};
 		
-		// class UserActions
-		// {
-		// 	class open
-		// 	{
-		// 		displayName = "use";
-		// 		position = "get_in_pos";
-		// 		radius = 8.5;
-		// 		onlyForPlayer = 1;
-		// 		condition = "true";                                  
-		// 		statement="this animateSource ['Crown_Translation',1];";
-		// 	};
-		// };
+		class UserActions
+		{
+			class open
+			{
+				displayName = "Turn on chair";
+				position = "action_point";
+				radius = 4;
+				onlyForPlayer = 1;
+				condition = "";                                  
+				statement="0 execVM 'scripts\enablechair.sqf'";
+			};
+		};
 	};	
 };
