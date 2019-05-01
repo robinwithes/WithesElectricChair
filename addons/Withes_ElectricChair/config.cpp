@@ -91,6 +91,7 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
+				gunnerName= "Detainee"
 				selectionFireAnim = "";
 				memoryPointsGetInGunner = "gunner_dir";
 				memoryPointsGetInGunnerDir = "get_in_pos";
@@ -212,19 +213,6 @@ class CfgVehicles
 		transportMaxMagazines = 0;
 		transportMaxWeapons = 0;
 		class Reflectors{};
-		// class UserActions
-		// {
-		// 	class PressXToFlipTheThing
-		// 	{
-		// 		displayNameDefault = "$STR_A3_StaticWeapon_UserActions_PressXToFlipTheThing0";
-		// 		displayName = "$STR_A3_StaticWeapon_UserActions_PressXToFlipTheThing0";
-		// 		position = "";
-		// 		radius = 2.7;
-		// 		onlyForPlayer = 1;
-		// 		condition = "alive this AND not canmove this AND (count crew this == 0 || isAutonomous this)";
-		// 		statement = "this setpos [getpos this select 0,getpos this select 1,(getpos this select 2)+1]";
-		// 	};
-		// };
 		numberPhysicalWheels = 0;
 	};
 	
