@@ -241,17 +241,17 @@ class CfgVehicles
 			};			
 		};
 		
-		class UserActions
-		{
-			class open
-			{
-				displayName = "Turn on chair";
-				position = "action_point";
-				radius = 4;
-				onlyForPlayer = 1;
-				condition = "";                                  
-				statement="0 execVM 'scripts\enablechair.sqf'";
-			};
-		};
+		// class UserActions
+		// {
+		// 	class open
+		// 	{
+		// 		displayName = "Turn on chair";
+		// 		position = "action_point";
+		// 		radius = 4;
+		// 		onlyForPlayer = 1;
+		// 		condition = "";                                  
+		// 		statement="0 execVM 'scripts\enablechair.sqf'";
+		// 	};
+		// };
 	};	
 };
