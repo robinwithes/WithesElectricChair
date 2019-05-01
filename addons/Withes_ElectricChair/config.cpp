@@ -12,28 +12,23 @@ class CfgPatches
 class CfgAddons
 {
 	class Withes_ElectricChair 
-		{
+	{
 		list[]=
-			{
-				"Withes_ElectricChair"
-			};
+		{
+			"Withes_ElectricChair"
+		};
 	};
 };
 
 class CfgVehiclesClasses
 {
-class Withes_ElectricChair
-{
-displayName="Electric Chair";
-};
+	class Withes_ElectricChair
+	{
+		displayName="Electric Chair";
+	};
 };
 
 // class CfgSounds {
-//   class Run_MRI {
-//     name = "Run_MRI";
-//     sound[] = {"ct_scanner_by_coala\sound\MRI.ogg", db+2, 1};
-//     titles[] = {};
-//   };
 //   class wolf2 {
 //     name = "";
 //     sound[] = {"ct_scanner_by_coala\sound\MRI.ogg", db+2, 1};
@@ -48,16 +43,16 @@ class CfgMovesBasic
 	class DefaultDie;
 	class ManActions
 	{
-		MriCargo1 = "MriCargo1"
+		ElectricChair_Sit = "ElectricChair_Sit"
 	};
 };
 
-class CfgMovesMaleSdr//: CfgMovesBasic
+class CfgMovesMaleSdr: CfgMovesBasic
 {
 	class States
 	{
 		class Crew;
-		class MriCargo1: Crew
+		class ElectricChair_Sit: Crew
 		{
 			file = "Withes_ElectricChair\anim\sit.rtm"
 		};
@@ -110,7 +105,7 @@ class CfgVehicles
 				castGunnerShadow = 1;
 				ejectDeadGunner = 1;
 				canEject = 1;
-				gunnerAction = "MriCargo1";
+				gunnerAction = "ElectricChair_Sit";
 				gunnerGetInAction = "";
 				gunnerGetOutAction = "";
 				gunnerForceOptics = 0;
@@ -186,7 +181,7 @@ class CfgVehicles
 		ejectDeadDriver = 1;
 		ejectDeadCargo = 1;
 		nightVision = 0;
-		driverAction = "MriCargo1";
+		driverAction = "ElectricChair_Sit";
 		driverInAction = "";
 		memoryPointsGetInCargo = "get_in_pos";
 		memoryPointsGetInCargoDir = "gunner_dir";
@@ -233,7 +228,7 @@ class CfgVehicles
 		numberPhysicalWheels = 0;
 	};
 	
-	class MRI_SCANNER: StaticWeapon 
+	class Withes_ElectricChair: StaticWeapon 
 	{
 		model 	= "\Withes_ElectricChair\electricchair.p3d";
 		scope	= 2;
@@ -242,34 +237,33 @@ class CfgVehicles
 		faction	= CIV_F;
 		displayName = "Electric Chair";
 
-		
 		class AnimationSources
 		{
 			class Crown_Translation
 			{
 				source = "user";
 				initPhase = 0;
-				animPeriod = 2;
+				animPeriod = 3;
 			};
-			class Chain_1_Translation
+			class Chains_Translation
 			{
 				source = "user";
 				initPhase = 0;
-				animPeriod = 2;
+				animPeriod = 3;
 			};			
 		};
 		
-		class UserActions
-		{
-			class open
-			{
-				displayName = "use";
-				position = "get_in_pos";
-				radius = 8.5;
-				onlyForPlayer = 1;
-				condition = "true";                                  
-				statement="this animateSource ['Crown_Translation',1];";
-			};
-		};
+		// class UserActions
+		// {
+		// 	class open
+		// 	{
+		// 		displayName = "use";
+		// 		position = "get_in_pos";
+		// 		radius = 8.5;
+		// 		onlyForPlayer = 1;
+		// 		condition = "true";                                  
+		// 		statement="this animateSource ['Crown_Translation',1];";
+		// 	};
+		// };
 	};	
 };
