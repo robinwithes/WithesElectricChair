@@ -36,14 +36,12 @@ class CfgSounds {
   };
 };
 
-class CfgMovesBasic 
+class CfgMovesBasic
 {
-	
-	class Action;
 	class DefaultDie;
 	class ManActions
 	{
-		ElectricChair_Sit = "ElectricChair_Sit"
+		ElectricChair_Sit = "ElectricChair_Sit";
 	};
 };
 
@@ -52,15 +50,18 @@ class CfgMovesMaleSdr: CfgMovesBasic
 	class States
 	{
 		class Crew;
+		class PreciseCrew: Crew
+		{
+			head = "headNo";
+		};
 		class ElectricChair_Sit: Crew
 		{
-			file = "Withes_ElectricChair\anim\sit.rtm"
+			file = "Withes_ElectricChair\anim\sit.rtm";
 		};
 	};
 };
 
-class CfgVehicles
-{
+class CfgVehicles {
 	class All;
 	class Strategic;
 	class Land;
@@ -91,7 +92,7 @@ class CfgVehicles
 		{
 			class MainTurret: NewTurret
 			{
-				gunnerName= "Detainee"
+				gunnerName= "Detainee";
 				selectionFireAnim = "";
 				memoryPointsGetInGunner = "gunner_dir";
 				memoryPointsGetInGunnerDir = "get_in_pos";
