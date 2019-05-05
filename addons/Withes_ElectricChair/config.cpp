@@ -250,7 +250,7 @@ class CfgVehicles {
 				position = "get_in_pos";
 				radius = 10;
 				onlyForPlayer = 0;
-				condition = "!(this getVariable ['in_use',false]) && (count (crew this) > 0)";                                  
+				condition = "!(this getVariable ['in_use',false]) && (count (crew this) > 0) && !((vehicle player) isEqualto this)";                                  
 				statement="this execVM '\Withes_ElectricChair\scripts\enablechair.sqf'";
 			};
 		};
