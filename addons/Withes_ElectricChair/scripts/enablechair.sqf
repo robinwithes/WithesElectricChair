@@ -20,13 +20,13 @@ _thing hideObjectGlobal true;
 _this animateSource ["Chains_Translation",1];
 _this animateSource ["Crown_Translation",1];
 sleep 3;
-{player setRandomLip true;} forEach crew _this;
+{_x setRandomLip true;} forEach crew _this;
 
 [_thing,"electricChairScream"] remoteExec ["say3D",0];
 _this execVM "\Withes_ElectricChair\scripts\electricity.sqf";
 sleep 8; //wait for the sound to finish
 
-{player setRandomLip false; unassignVehicle _x; _x action ["GetOut", vehicle _x]; _x setDamage 1}forEach crew _this;
+{_x setRandomLip false; unassignVehicle _x; _x action ["GetOut", vehicle _x]; _x setDamage 1}forEach crew _this;
 
 sleep 3;
 _this setVariable ["in_use",nil,true];
